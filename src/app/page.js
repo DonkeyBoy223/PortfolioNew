@@ -13,7 +13,16 @@ export default function Home() {
 
   const textArray = ["Frontend Developer", "Web Designer", "UI/UX Designer"];
   const [ref, inView] = useInView({
-    triggerOnce: true, // Trigger the animation once when it comes into view
+    triggerOnce: true,
+    threshold: 0.5, // Trigger the animation once when it comes into view
+  });
+  const [refMain, inViewMain] = useInView({
+    triggerOnce: true,
+    threshold: 0.5, // Trigger the animation once when it comes into view
+  });
+  const [ref2, inView2] = useInView({
+    triggerOnce: true,
+    threshold: 0.5, // Trigger the animation once when it comes into view
   });
 
   const animationVariants = {
@@ -104,9 +113,9 @@ export default function Home() {
           <h6 class='text-white text-[40px] md:text-[60px] font-bold'>Skills</h6>
         </div>
         <motion.div
-          ref={ref}
+          ref={refMain}
           initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
+          animate={inViewMain ? 'visible' : 'hidden'}
           variants={animationVariantsLine}
           transition={{ ...animationTransition, delay: 0.2 }} // Adjust the delay for staggered animation
         >
@@ -114,80 +123,83 @@ export default function Home() {
         </motion.div>
         <div class='flex flex-col px-6 items-center lg:flex-row  justify-between mt-[40px]'>
           <div class="flex flex-col items-center lg:items-start gap-y-4">
-          <motion.div
-            ref={ref}
-            initial="hidden"
-            animate={inView ? 'visible' : 'hidden'}
-            variants={animationVariants}
-            transition={{ ...animationTransition, delay: 0.75 }}
-          >
-            <h6 class="text-white animated-text font-bold text-[40px] md:text-[60px]">HTML</h6>
-            <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">4 Years Experience</p>
-          </motion.div>
-          </div>
-          <div class="flex flex-col items-center lg:items-start gap-y-4">
-          <motion.div
-            ref={ref}
-            initial="hidden"
-            animate={inView ? 'visible' : 'hidden'}
-            variants={animationVariants}
-            transition={{ ...animationTransition, delay: 0.8 }}
-          >
-            <h6 class="text-white animated-text font-bold text-[40px] md:text-[60px]">CSS</h6>
-            <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">4 Years Experience</p>
+            <motion.div
+              ref={refMain}
+              initial="hidden"
+              animate={inViewMain ? 'visible' : 'hidden'}
+              variants={animationVariants}
+              transition={{ ...animationTransition, delay: 0.75 }}
+            >
+              <h6 class="text-white animated-text font-bold text-[40px] md:text-[60px] text-center">HTML</h6>
+              <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">4 Years Experience</p>
             </motion.div>
           </div>
           <div class="flex flex-col items-center lg:items-start gap-y-4">
-          <motion.div
-            ref={ref}
-            initial="hidden"
-            animate={inView ? 'visible' : 'hidden'}
-            variants={animationVariants}
-            transition={{ ...animationTransition, delay: 1 }}
-          >
-            <h6 class="text-white animated-text font-bold text-[40px] md:text-[60px]">Javascript</h6>
-            <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">3 Years Experience</p>
+            <motion.div
+              ref={ref}
+              initial="hidden"
+              animate={inView ? 'visible' : 'hidden'}
+              variants={animationVariants}
+              transition={{ ...animationTransition, delay: 0.8 }}
+            >
+              <h6 class="text-white animated-text font-bold text-[40px] md:text-[60px] text-center">CSS</h6>
+              <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">4 Years Experience</p>
             </motion.div>
           </div>
+          <div class="flex flex-col items-center lg:items-start gap-y-4">
+            <motion.div
+              ref={ref}
+              initial="hidden"
+              animate={inView ? 'visible' : 'hidden'}
+              variants={animationVariants}
+              transition={{ ...animationTransition, delay: 1 }}
+            >
+              <h6 class="text-white animated-text font-bold text-[40px] md:text-[60px] text-center">Javascript</h6>
+              <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">3 Years Experience</p>
+            </motion.div>
+          </div>
+
         </div>
+
         <div class='flex flex-col px-6 items-center lg:flex-row  justify-between gap-x-[6em] mt-[12px] lg:mt-[6em]'>
           <div class="flex flex-col items-center lg:items-start gap-y-4">
-          <motion.div
-            ref={ref}
-            initial="hidden"
-            animate={inView ? 'visible' : 'hidden'}
-            variants={animationVariants}
-            transition={{ ...animationTransition, delay: 0.2}}
-          >
-            <h6 class="text-white animated-text font-bold text-[40px] md:text-[60px]">React</h6>
-            <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">2.5 Years Experience</p>
+            <motion.div
+              ref={ref}
+              initial="hidden"
+              animate={inView ? 'visible' : 'hidden'}
+              variants={animationVariants}
+              transition={{ ...animationTransition, delay: 0.2}}
+            >
+              <h6 class="text-white animated-text font-bold text-[40px] md:text-[60px] text-center">React</h6>
+              <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">2.5 Years Experience</p>
             </motion.div>
           </div>
           <div class="flex flex-col items-center lg:items-start gap-y-4">
-          <motion.div
-            ref={ref}
-            initial="hidden"
-            animate={inView ? 'visible' : 'hidden'}
-            variants={animationVariants}
-            transition={{ ...animationTransition, delay: 1.2 }}
-          >
-            <h6 class="text-white animated-text font-bold text-[40px] md:text-[60px]">NextJS</h6>
-            <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">6 Months Experience</p>
+            <motion.div
+              ref={ref}
+              initial="hidden"
+              animate={inView ? 'visible' : 'hidden'}
+              variants={animationVariants}
+              transition={{ ...animationTransition, delay: 1.2 }}
+            >
+              <h6 class="text-white animated-text font-bold text-[40px] md:text-[60px] text-center">NextJS</h6>
+              <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">6 Months Experience</p>
             </motion.div>
           </div>
           <div class="flex flex-col items-center lg:items-start gap-y-4">
-          <motion.div
-            ref={ref}
-            initial="hidden"
-            animate={inView ? 'visible' : 'hidden'}
-            variants={animationVariants}
-            transition={{ ...animationTransition, delay: 0.6}}
-          >
-            <h6 class="text-white animated-text font-bold text-[40px] md:text-[60px]">Tailwind</h6>
-            <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">6 Months Experience</p>
+            <motion.div
+              ref={ref}
+              initial="hidden"
+              animate={inView ? 'visible' : 'hidden'}
+              variants={animationVariants}
+              transition={{ ...animationTransition, delay: 0.6}}
+            >
+              <h6 class="text-white animated-text font-bold text-[40px] md:text-[60px] text-center">Tailwind</h6>
+              <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">6 Months Experience</p>
             </motion.div>
           </div>
         </div>
+
         <motion.div
             ref={ref}
             initial="hidden"
@@ -200,7 +212,31 @@ export default function Home() {
         <p class='text-[#4E4E50] text-center font-bold text-[16px] mt-[40px]'>Forever Evolving, Forever Learning</p>
       </div>
       <div id="portfolio" class="py-[120px] max-w-7xl mx-auto px-6 z-30 relative">
-
+        <div class='flex flex-row justify-between w-full my-6'>
+          <h6 class='text-white text-[40px] md:text-[60px] font-bold'>Projects</h6>
+        </div>
+        <motion.div
+            ref={ref2}
+            initial="hidden"
+            animate={inView2 ? 'visible' : 'hidden'}
+            variants={animationVariantsLine}
+            transition={{ ...animationTransition, delay: 0.2 }}
+          >
+        <div class='w-full h-1 bg-[#4E4E50] '></div>
+        </motion.div>
+        <div class='flex flex-col lg:gap-y-6 lg:flex-row justify-between w-full my-12'>
+        <div class='flex flex-col items-start gap-y-2'>
+          <div class="p-0 animated-bg">
+            <img src="/assets/vision.png" alt="Project1" />
+          </div>
+          <p class='text-[14px] font-bold text-[#A6ACBB]'>Vision</p>
+          <div class="flex flex-row gap-x-4">
+            <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center">React</div>
+            <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center">Web Animations</div>
+          </div>
+        </div>
+        <div class='flex flex-col items-start gap-y-2'></div>
+      </div>
       </div>
     </div>
   )

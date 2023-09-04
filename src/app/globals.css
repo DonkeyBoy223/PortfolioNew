@@ -24,6 +24,14 @@ body, html {
   margin: 0;
   scroll-behavior: smooth;
 }
+.animated-bg img {
+  width: 554px;
+  height: 344px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  max-width: 100%;
+  border-radius: 24px;
+}
 .navbar {
   display: flex;
   align-items: center;
