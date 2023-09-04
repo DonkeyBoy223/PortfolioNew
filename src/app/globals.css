@@ -77,7 +77,7 @@ body, html {
   background-position: 0 -100%!important;
   background-repeat: repeat-x!important;
   transition: background-position 1.2s ease!important;
-  background-image: url('../assets/waves.svg')!important;
+  background-image: url('./assets/waves.svg')!important;
 }
 .nav-btn:hover {
   background-position: 100% 50%!important;
