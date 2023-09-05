@@ -7,10 +7,50 @@ import Navbar from './components/navbar'
 import Type from './components/type';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer'
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 
 export default function Home() {
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const formRef = useRef();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    try {
+      const response = await fetch('/api/sendEmail', {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        // Handle success, e.g., show a success message
+        console.log('Email sent successfully');
+      } else {
+        // Handle error, e.g., show an error message
+        console.error('Error sending email');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
 
   const textArray = ["Frontend Developer", "Web Designer", "UI/UX Designer"];
   const [ref, inView] = useInView({
@@ -42,6 +82,10 @@ export default function Home() {
     threshold: 0.5, // Trigger the animation once when it comes into view
   });
   const [refProject, inViewProject] = useInView({
+    triggerOnce: true,
+    threshold: 0.5, // Trigger the animation once when it comes into view
+  });
+  const [refProject1, inViewProject1] = useInView({
     triggerOnce: true,
     threshold: 0.5, // Trigger the animation once when it comes into view
   });
@@ -232,7 +276,7 @@ export default function Home() {
         </motion.div>
         <p class='text-[#4E4E50] text-center font-bold text-[16px] mt-[40px]'>Forever Evolving, Forever Learning</p>
       </div>
-      <div id="portfolio" class="py-[120px] max-w-7xl mx-auto px-6 z-30 relative">
+      <div id="projects" class="py-[120px] max-w-7xl mx-auto px-6 z-30 relative">
         <div class='flex flex-row justify-between w-full my-6'>
           <h6 class='text-white text-[40px] md:text-[60px] font-bold'>Projects</h6>
         </div>
@@ -245,34 +289,128 @@ export default function Home() {
           >
         <div class='w-full h-1 bg-[#4E4E50] '></div>
         </motion.div>
-        <div class='flex flex-col lg:gap-y-6 lg:flex-row justify-between w-full my-12'>
-        <div class='flex flex-col items-start gap-y-2'>
-          <div class="p-0 animated-bg">
-          <a href="https://www.visionbot.cx" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/vision.png" alt="Project1" />
-          </a>
+        <div class='flex flex-col lg:gap-y-6 md:gap-y-6 sm:gap-y-6 lg:flex-row justify-between w-full my-12'>
+          <div class='flex flex-col items-start gap-y-2'>
+            <motion.div
+              ref={refProject1}
+              initial="hidden"
+              animate={inViewProject1 ? 'visible' : 'hidden'}
+              variants={animationVariants}
+              transition={{ ...animationTransition, delay: 0.2 }}
+            >
+              <div class="p-0 animated-bg">
+                <a href="https://www.visionbot.cx" target="_blank" rel="noopener noreferrer">
+                  <img src="/assets/vision.png" alt="Project1" />
+                </a>
+              </div>
+              <p class='text-[14px] font-bold text-[#A6ACBB] pt-1'>Vision</p>
+              <div class="flex flex-row gap-x-4 pt-1 pb-2">
+                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">React</div>
+                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66] ">Web Animations</div>
+              </div>
+            </motion.div>
           </div>
-          <p class='text-[14px] font-bold text-[#A6ACBB]'>Vision</p>
-          <div class="flex flex-row gap-x-4">
-            <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center">React</div>
-            <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center">Web Animations</div>
+
+          <div class='flex flex-col items-start gap-y-2'>
+            <motion.div
+              ref={refProject1}
+              initial="hidden"
+              animate={inViewProject1 ? 'visible' : 'hidden'}
+              variants={animationVariants}
+              transition={{ ...animationTransition, delay: 0.2 }}
+            >
+              <div class="p-0 animated-bg">
+                <a href="https://github.com/DonkeyBoy223/EcommerceStore/" target="_blank" rel="noopener noreferrer">
+                  <img src="/assets/ecommerce.png" alt="Project2" />
+                </a>
+              </div>
+              <p class='text-[14px] font-bold text-[#A6ACBB] pt-1'>Ecommerce</p>
+              <div class="flex flex-row gap-x-4 pt-1">
+                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">React</div>
+                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">NodeJS</div>
+                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">MySQL</div>
+              </div>
+            </motion.div>
           </div>
+
         </div>
-        <div class='flex flex-col items-start gap-y-2'>
-          <div class="p-0 animated-bg">
-          <a href="https://github.com/DonkeyBoy223/EcommerceStore/" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/ecommerce.png" alt="Project1" />
-          </a>
-          </div>
-          <p class='text-[14px] font-bold text-[#A6ACBB]'>Ecommerce</p>
-          <div class="flex flex-row gap-x-4">
-            <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center">React</div>
-            <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center">NodeJS</div>
-            <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center">MySQL</div>
-          </div>
-        </div>
-        <div class='flex flex-col items-start gap-y-2'></div>
+        <motion.div
+            ref={refProject}
+            initial="hidden"
+            animate={inViewProject ? 'visible' : 'hidden'}
+            variants={animationVariantsLine}
+            transition={{ ...animationTransition, delay: 0.2 }}
+          >
+        <div class='w-full h-1 bg-[#4E4E50] '></div>
+        </motion.div>
+        <p class='text-[#4E4E50] text-center font-bold text-[16px] mt-[40px]'>Along with countless others...</p>
+        <p class='text-[#00ff66] text-center font-bold text-[16px] mt-[40px]'>Join the list.</p>
+
       </div>
+      <div class='w-screen py-24 bg-[#141414]'>
+        <h6 class='text-white font-bold mb-6 text-[40px] md:text-[60px] text-center mx-auto'>Want to work together?</h6>
+        <h6 class='text-white font-bold mb-6 animated-text text-[40px] md:text-[60px] text-center mx-auto'>Lets Talk!</h6>
+        <div id='contact' class='flex flex-col lg:gap-0 gap-6 lg:flex-row w-full justify-between max-w-7xl mx-auto px-6 pb-12'>
+          <div class="flex flex-col items-start">
+            <div class="flex flex-col items-start gap-y-2 mb-6">
+              <h6 class="text-white animated-text text-[20px] font-bold">Get In Touch.</h6>
+              <p class="text-white text-[14px] max-w-[450px] text-left">Reach out to me if you need any help, have questions; our you are ready to start building your<span class="animated-text font-bold"> Dream Project.</span></p></div>
+              <div class="flex flex-col items-start gap-y-2 mb-6">
+                <h6 class="text-white animated-text text-[12px] leading-loose">Mail</h6>
+                <p class="text-white text-[14px] max-w-[450px] text-left">sdoncaster5@gmail.com</p></div>
+                <div class="flex flex-col items-start gap-y-2 mb-6">
+                  <h6 class="text-white animated-text text-[12px] leading-loose">Github</h6>
+                  <p class="text-white text-[14px] max-w-[450px] text-left">https://github.com/DonkeyBoy223</p>
+                </div>
+                <div class="flex flex-col items-start gap-y-2 mb-6"><h6 class="text-white animated-text text-[12px] leading-loose">Discord</h6>
+                  <p class="text-white text-[14px] max-w-[450px] text-left">donks.</p>
+            </div>
+          </div>
+          <form onSubmit={handleSubmit} ref={formRef} class="bg-[#1a1a1c] p-6 min-w-[450px] rounded-[24px]" action="" method='POST'>
+            <h6 class="text-white text-[20px] mb-4">Contact Form</h6>
+            <div class="flex flex-col items-start mb-6">
+            <label class="text-white/60 text-[12px] mb-1" for="Name">Your Name</label>
+            <input value={formData.name} onChange={handleChange} required type="text" id="name" name="name" placeholder="eg Sam Doncaster" class="bg-transparent border text-white/60 border-white/10 rounded-lg p-3 px-4 w-full"></input></div>
+            <div class="flex flex-col items-start mb-6">
+            <label class="text-white/60 text-[12px] mb-1" for="Email">Your Email</label>
+            <input type="email" id="email" value={formData.email} onChange={handleChange} required name="email" placeholder="eg sdoncaster5@gmail.com" class="bg-transparent border text-white/60 border-white/10 rounded-lg p-3 px-4 w-full"></input></div>
+            <div class="flex flex-col items-start mb-6">
+            <label class="text-white/60 text-[12px] mb-1" for="Message">Message</label>
+            <textarea class="bg-transparent border text-white/60 border-white/10 rounded-lg p-3 px-4 w-full" placeholder="How can I help you?" value={formData.message} onChange={handleChange} required id="message" name="message"></textarea></div>
+            <a class="gradient-btn cursor-pointer z-50  transition-all border border-white/0 hover:border-white/50 min-w-[190px] flex text-center flex-row items-center justify-center px-5 py-3 text-white text-[13px] md:text-[16px] font-semibold null"><button type='submit'>Send Message</button></a>
+          </form>
+        </div>
+        <div class='w-full h-1 bg-[#4E4E50] my-[40px]'></div>
+        <footer class='footer p-10 px-6 max-w-[1560px] mx-auto  text-base-content'>
+          <div>
+            <div class='flex flex-row items-center gap-x-1 md:gap-x-2'>
+              <a class='font-bold md:block hidden brand-text  text-[16px] md:text-[20px] text-[#4E4E50]'>Sam Doncaster</a>
+            </div>
+          </div>
+          <div>
+            <span class='footer-title text-[16px] font-bold text-[#8A8A8A] uppercase'>Helpful Links</span>
+            <a href="#skills" class='hover:text-[#00ff66] text-white text-[16px] font-semibold'>Skills</a>
+            <a href="#projects" class='hover:text-[#00ff66] text-white text-[16px] font-semibold'>Projects</a>
+          </div>
+          <div>
+            <span class="footer-title text-[16px] font-bold text-[#8A8A8A] uppercase">Contact Links</span>
+            <a href="#contact" class="hover:text-[#00ff66] text-white text-[16px] font-semibold">Contact</a>
+            <a class="hover:text-[#00ff66] text-white text-[16px] font-semibold">Twitter</a>
+          </div>
+          <div>
+            <span class="footer-title text-[16px] font-bold text-[#8A8A8A] uppercase">Support</span>
+            <a class="hover:text-[#00ff66] text-white text-[16px] font-semibold">Contact</a>
+            <a href='mailto:sdoncaster5@gmail.com' class="hover:text-[#00ff66] text-[#00ff66] text-[16px] font-semibold hover:cursor-pointer">Email<span>
+              <svg class="inline-block ml-2" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.47144 7.45143C2.2052 7.48809 2 7.71969 2 7.99993C2 8.30564 2.24421 8.55347 2.54545 8.55347H12.1333L8.6698 12.0542L8.61686 12.1162C8.45797 12.3326 8.47495 12.6401 8.6682 12.8371C8.88077 13.0537 9.22613 13.0544 9.43959 12.8387L13.8318 8.3997C13.858 8.37427 13.8816 8.34622 13.9024 8.31597C14.0511 8.0998 14.0301 7.79995 13.8396 7.60737L9.43955 3.16129L9.37826 3.10782C9.16439 2.9475 8.8614 2.96603 8.66817 3.16297C8.45561 3.37961 8.45636 3.7301 8.66983 3.9458L12.1342 7.44638L2.54545 7.44638L2.47144 7.45143Z" fill="#ff83be"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.47144 7.45143C2.2052 7.48809 2 7.71969 2 7.99993C2 8.30564 2.24421 8.55347 2.54545 8.55347H12.1333L8.6698 12.0542L8.61686 12.1162C8.45797 12.3326 8.47495 12.6401 8.6682 12.8371C8.88077 13.0537 9.22613 13.0544 9.43959 12.8387L13.8318 8.3997C13.858 8.37427 13.8816 8.34622 13.9024 8.31597C14.0511 8.0998 14.0301 7.79995 13.8396 7.60737L9.43955 3.16129L9.37826 3.10782C9.16439 2.9475 8.8614 2.96603 8.66817 3.16297C8.45561 3.37961 8.45636 3.7301 8.66983 3.9458L12.1342 7.44638L2.54545 7.44638L2.47144 7.45143Z" fill="url(#paint0_linear_399_2846)"></path>
+                <defs><linearGradient id="paint0_linear_399_2846" x1="2" y1="13" x2="14.7636" y2="4.09411" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#00ff66"></stop><stop offset="1" stop-color="#008c45"></stop>
+                  </linearGradient></defs></svg>
+                  </span>
+                  </a>
+          </div>
+        </footer>
       </div>
     </div>
   )

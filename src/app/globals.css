@@ -192,3 +192,24 @@ body, html {
   border-radius: 82px;
   background: linear-gradient(90deg,#00ff66 ,#008c45 );
 }
+@media (min-width: 48rem) {
+.footer {
+    grid-auto-flow: column!important;
+}
+}
+.footer, .footer>* {
+    display: grid;
+    place-items: start;
+}
+.footer {
+    width: 100%;
+    grid-auto-flow: row;
+    row-gap: 2.5rem;
+    -moz-column-gap: 1rem;
+    column-gap: 1rem;
+    font-size: .875rem;
+    line-height: 1.25rem;
+}
+.footer>* {
+  gap: 0.5rem;
+}
