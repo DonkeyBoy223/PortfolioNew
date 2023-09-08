@@ -532,7 +532,7 @@ export default function Home() {
         <footer class='footer p-10 px-6 max-w-[1560px] mx-auto  text-base-content'>
           <div>
             <div class='flex flex-row items-center gap-x-1 md:gap-x-2'>
-              <a rel="nofollow" class='font-bold md:block hidden brand-text  text-[16px] md:text-[20px] text-[#4E4E50]'>Sam Doncaster</a>
+              <p rel="nofollow" class='font-bold md:block hidden brand-text  text-[16px] md:text-[20px] text-[#4E4E50]'>Sam Doncaster</p>
             </div>
           </div>
           <div>
@@ -543,11 +543,11 @@ export default function Home() {
           <div>
             <span class="footer-title text-[16px] font-bold text-[#8A8A8A] uppercase">Contact Links</span>
             <a href="#contact" class="hover:text-[#00ff66] text-white text-[16px] font-semibold">Contact</a>
-            <a rel="nofollow" class="hover:text-[#00ff66] text-white text-[16px] font-semibold">Twitter</a>
+            <p rel="nofollow" class="hover:text-[#00ff66] text-white text-[16px] font-semibold">Twitter</p>
           </div>
           <div>
             <span class="footer-title text-[16px] font-bold text-[#8A8A8A] uppercase">Support</span>
-            <a rel="nofollow" class="hover:text-[#00ff66] text-white text-[16px] font-semibold">Contact</a>
+            <p rel="nofollow" class="hover:text-[#00ff66] text-white text-[16px] font-semibold">Contact</p>
             <a href='mailto:sdoncaster5@gmail.com' class="hover:text-[#00ff66] text-[#00ff66] text-[16px] font-semibold hover:cursor-pointer">Email<span>
               <svg class="inline-block ml-2" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M2.47144 7.45143C2.2052 7.48809 2 7.71969 2 7.99993C2 8.30564 2.24421 8.55347 2.54545 8.55347H12.1333L8.6698 12.0542L8.61686 12.1162C8.45797 12.3326 8.47495 12.6401 8.6682 12.8371C8.88077 13.0537 9.22613 13.0544 9.43959 12.8387L13.8318 8.3997C13.858 8.37427 13.8816 8.34622 13.9024 8.31597C14.0511 8.0998 14.0301 7.79995 13.8396 7.60737L9.43955 3.16129L9.37826 3.10782C9.16439 2.9475 8.8614 2.96603 8.66817 3.16297C8.45561 3.37961 8.45636 3.7301 8.66983 3.9458L12.1342 7.44638L2.54545 7.44638L2.47144 7.45143Z" fill="#ff83be"></path>

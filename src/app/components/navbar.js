@@ -19,7 +19,7 @@ export default function Navbar() {
                     </ul>
                 </div>
                 <div class='flex flex-row items-center gap-x-1 md:gap-x-2'>
-                    <a class='font-bold md:block hidden brand-text text-[16px] md:text-[28px] text-[#4E4E50]'>Sam Doncaster</a>
+                    <p class='font-bold md:block hidden brand-text text-[16px] md:text-[28px] text-[#4E4E50]'>Sam Doncaster</p>
                 </div>
             </div>
             <div class='navbar-center hidden lg:flex'>
