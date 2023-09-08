@@ -207,8 +207,8 @@ export default function Home() {
               variants={animationVariants}
               transition={{ ...animationTransition, delay: 0.75 }}
             >
-              <h6 class="text-white animated-text font-bold text-[40px] md:text-[60px] text-center">CSS</h6>
-              <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">4 Years Experience</p>
+              <h6 class="text-white animated-text font-bold text-[40px] md:text-[60px] text-center">NodeJS</h6>
+              <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">3 Years Experience</p>
             </motion.div>
           </div>
           <div class="flex flex-col items-center lg:items-start gap-y-4">
@@ -248,7 +248,7 @@ export default function Home() {
               transition={{ ...animationTransition, delay: 0.75}}
             >
               <h6 class="text-white animated-text font-bold text-[40px] md:text-[60px] text-center">NextJS</h6>
-              <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">6 Months Experience</p>
+              <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">9 Months Experience</p>
             </motion.div>
           </div>
           <div class="flex flex-col items-center lg:items-start gap-y-4">
@@ -260,7 +260,7 @@ export default function Home() {
               transition={{ ...animationTransition, delay: 0.75}}
             >
               <h6 class="text-white animated-text font-bold text-[40px] md:text-[60px] text-center">Tailwind</h6>
-              <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">6 Months Experience</p>
+              <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">9 Months Experience</p>
             </motion.div>
           </div>
         </div>
@@ -329,9 +329,103 @@ export default function Home() {
                 <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">React</div>
                 <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">NodeJS</div>
                 <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">MySQL</div>
+                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">SimpleUI</div>
               </div>
             </motion.div>
           </div>
+
+        </div>
+        <div class='flex flex-col lg:gap-y-6 md:gap-y-6 sm:gap-y-6 lg:flex-row justify-between w-full my-12'>
+          <div class='flex flex-col items-start gap-y-2'>
+            <motion.div
+              ref={refProject1}
+              initial="hidden"
+              animate={inViewProject1 ? 'visible' : 'hidden'}
+              variants={animationVariants}
+              transition={{ ...animationTransition, delay: 0.2 }}
+            >
+              <div class="p-0 animated-bg">
+                <a href="https://reflect.app/" target="_blank" rel="noopener noreferrer">
+                  <img src="/assets/reflect.png" alt="Project1" />
+                </a>
+              </div>
+              <p class='text-[14px] font-bold text-[#A6ACBB] pt-1'>Reflect</p>
+              <div class="flex flex-row gap-x-4 pt-1 pb-2">
+                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">UI/UX</div>
+                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66] ">Web Animations</div>
+                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66] ">Figma</div>
+              </div>
+            </motion.div>
+          </div>
+
+          <div class='flex flex-col items-start gap-y-2'>
+            <motion.div
+              ref={refProject1}
+              initial="hidden"
+              animate={inViewProject1 ? 'visible' : 'hidden'}
+              variants={animationVariants}
+              transition={{ ...animationTransition, delay: 0.2 }}
+            >
+              <div class="p-0 animated-bg">
+                <a href="https://www.spearproxies.com/" target="_blank" rel="noopener noreferrer">
+                  <img src="/assets/spear.png" alt="Project2" />
+                </a>
+              </div>
+              <p class='text-[14px] font-bold text-[#A6ACBB] pt-1'>SpearProxies</p>
+              <div class="flex flex-row gap-x-4 pt-1">
+                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">React</div>
+                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">Web Animations</div>
+                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">Figma</div>
+              </div>
+            </motion.div>
+          </div>
+          
+
+        </div>
+        <div class='flex flex-col lg:gap-y-6 md:gap-y-6 sm:gap-y-6 lg:flex-row justify-between w-full my-12'>
+          <div class='flex flex-col items-start gap-y-2'>
+            <motion.div
+              ref={refProject1}
+              initial="hidden"
+              animate={inViewProject1 ? 'visible' : 'hidden'}
+              variants={animationVariants}
+              transition={{ ...animationTransition, delay: 0.2 }}
+            >
+              <div class="p-0 animated-bg">
+                <a href="https://dashboard.lemonclub.io/dashboard#static" target="_blank" rel="noopener noreferrer">
+                  <img src="/assets/lemon.png" alt="Project1" />
+                </a>
+              </div>
+              <p class='text-[14px] font-bold text-[#A6ACBB] pt-1'>LemonClub</p>
+              <div class="flex flex-row gap-x-4 pt-1 pb-2">
+                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">React</div>
+                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66] ">Figma</div>
+              </div>
+            </motion.div>
+          </div>
+
+          <div class='flex flex-col items-start gap-y-2'>
+            <motion.div
+              ref={refProject1}
+              initial="hidden"
+              animate={inViewProject1 ? 'visible' : 'hidden'}
+              variants={animationVariants}
+              transition={{ ...animationTransition, delay: 0.2 }}
+            >
+              <div class="p-0 animated-bg">
+                <a href="https://github.com/DonkeyBoy223/EcommerceStore/" target="_blank" rel="noopener noreferrer">
+                  <img src="/assets/spear.png" alt="Project2" />
+                </a>
+              </div>
+              <p class='text-[14px] font-bold text-[#A6ACBB] pt-1'>SpearProxies</p>
+              <div class="flex flex-row gap-x-4 pt-1">
+                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">React</div>
+                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">Web Animations</div>
+                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">Figma</div>
+              </div>
+            </motion.div>
+          </div>
+          
 
         </div>
         <motion.div
