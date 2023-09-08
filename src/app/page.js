@@ -221,7 +221,7 @@ export default function Home() {
       </div>
       <div id='skills' class='py-[120px] max-w-7xl mx-auto px-6 z-30 relative'>
         <div class='flex flex-row justify-between w-full my-6'>
-          <h6 class='text-white text-[40px] md:text-[60px] font-bold'>Skills</h6>
+          <h1 class='text-white text-[40px] md:text-[60px] font-bold'>Skills</h1>
         </div>
         <motion.div
           ref={refMain}
@@ -241,7 +241,7 @@ export default function Home() {
               variants={animationVariants}
               transition={{ ...animationTransition, delay: 0.75 }}
             >
-              <h6 class="text-white animated-text font-bold text-[40px] md:text-[60px] text-center">HTML</h6>
+              <h2 class="text-white animated-text font-bold text-[40px] md:text-[60px] text-center">HTML</h2>
               <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">4 Years Experience</p>
             </motion.div>
           </div>
@@ -253,7 +253,7 @@ export default function Home() {
               variants={animationVariants}
               transition={{ ...animationTransition, delay: 0.75 }}
             >
-              <h6 class="text-white animated-text font-bold text-[40px] md:text-[60px] text-center">NodeJS</h6>
+              <h3 class="text-white animated-text font-bold text-[40px] md:text-[60px] text-center">NodeJS</h3>
               <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">3 Years Experience</p>
             </motion.div>
           </div>
@@ -265,7 +265,7 @@ export default function Home() {
               variants={animationVariants}
               transition={{ ...animationTransition, delay: 0.75 }}
             >
-              <h6 class="text-white animated-text font-bold text-[40px] md:text-[60px] text-center">Javascript</h6>
+              <h4 class="text-white animated-text font-bold text-[40px] md:text-[60px] text-center">Javascript</h4>
               <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">3 Years Experience</p>
             </motion.div>
           </div>
@@ -281,7 +281,7 @@ export default function Home() {
               variants={animationVariants}
               transition={{ ...animationTransition, delay: 0.75}}
             >
-              <h6 class="text-white animated-text font-bold text-[40px] md:text-[60px] text-center">React</h6>
+              <h5 class="text-white animated-text font-bold text-[40px] md:text-[60px] text-center">React</h5>
               <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">2.5 Years Experience</p>
             </motion.div>
           </div>
@@ -525,7 +525,7 @@ export default function Home() {
             <div class="flex flex-col items-start mb-6">
             <label class="text-white/60 text-[12px] mb-1" for="Message">Message</label>
             <textarea class="bg-transparent border text-white/60 border-white/10 rounded-lg p-3 px-4 w-full" placeholder="How can I help you?" value={formData.message} onChange={handleChange} required id="message" name="message"></textarea></div>
-            <a rel="nofollow" class="gradient-btn cursor-pointer z-50  transition-all border border-white/0 hover:border-white/50 min-w-[190px] flex text-center flex-row items-center justify-center px-5 py-3 text-white text-[13px] md:text-[16px] font-semibold null"><button type='submit'>Send Message</button></a>
+            <p class="gradient-btn cursor-pointer z-50  transition-all border border-white/0 hover:border-white/50 min-w-[190px] flex text-center flex-row items-center justify-center px-5 py-3 text-white text-[13px] md:text-[16px] font-semibold null"><button type='submit'>Send Message</button></p>
           </form>
         </div>
         <div class='w-full h-1 bg-[#4E4E50] my-[40px]'></div>
