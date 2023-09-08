@@ -8,7 +8,7 @@ import Type from './components/type';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer'
 import { useRef, useState } from 'react';
-
+import Alert from './components/alert';
 
 export default function Home() {
 
@@ -17,12 +17,22 @@ export default function Home() {
     email: '',
     message: '',
   });
+  const [alertMessage, setAlertMessage] = useState(''); // State for alert message
+  const [showAlert, setShowAlert] = useState(false);
 
+  const clearForm = () => {
+    setFormData({
+      name: '',
+      email: '',
+      message: '',
+    });
+  };
+  
   const formRef = useRef();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+  
     try {
       const response = await fetch('/api/sendEmail', {
         method: 'POST',
@@ -31,10 +41,21 @@ export default function Home() {
           'Content-Type': 'application/json',
         },
       });
-
+  
       if (response.ok) {
-        // Handle success, e.g., show a success message
-        console.log('Email sent successfully');
+        // Handle success
+        const result = await response.json();
+  
+        if (result.success) {
+          // Show success message and clear the form
+          setAlertMessage('Email sent successfully');
+          setShowAlert(true);
+          clearForm()
+          // Clear the form data (assuming you have a function to clear it)
+        } else {
+          // Handle other success scenarios if needed
+          console.error('Error sending email:', result.message);
+        }
       } else {
         // Handle error, e.g., show an error message
         console.error('Error sending email');
@@ -43,6 +64,11 @@ export default function Home() {
       console.error('Error:', error);
     }
   };
+  const handleAlertClose = () => {
+    // Hide the alert when the close button is clicked
+    setShowAlert(false);
+  };
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -89,6 +115,26 @@ export default function Home() {
     triggerOnce: true,
     threshold: 0.5, // Trigger the animation once when it comes into view
   });
+  const [refProject2, inViewProject2] = useInView({
+    triggerOnce: true,
+    threshold: 0.5, // Trigger the animation once when it comes into view
+  });
+  const [refProject3, inViewProject3] = useInView({
+    triggerOnce: true,
+    threshold: 0.5, // Trigger the animation once when it comes into view
+  });
+  const [refProject4, inViewProject4] = useInView({
+    triggerOnce: true,
+    threshold: 0.5, // Trigger the animation once when it comes into view
+  });
+  const [refProject5, inViewProject5] = useInView({
+    triggerOnce: true,
+    threshold: 0.5, // Trigger the animation once when it comes into view
+  });
+  const [refProject6, inViewProject6] = useInView({
+    triggerOnce: true,
+    threshold: 0.5, // Trigger the animation once when it comes into view
+  });
 
   const animationVariants = {
     hidden: { opacity: 0, scale: 0.8 },
@@ -117,6 +163,7 @@ export default function Home() {
 
   return (
     <div class='relative mobile-bg h-screen'>
+      {showAlert && <Alert message={alertMessage} onClose={handleAlertClose} />}
       <Navbar />
       <div class='w-full h-screen flex flex-col xl:gap-y-0 gap-y-[40px] xl:flex-row items-center justify-center xl:justify-between relative'>
         <div class='flex justify-center p-6 xl:w-[50vw] xl:pl-[12.5%] flex-col gap-y-[40px] items-center xl:items-start'>
@@ -290,7 +337,7 @@ export default function Home() {
         <div class='w-full h-1 bg-[#4E4E50] '></div>
         </motion.div>
         <div class='flex flex-col lg:gap-y-6 md:gap-y-6 sm:gap-y-6 lg:flex-row justify-between w-full my-12'>
-          <div class='flex flex-col items-start gap-y-2'>
+          <div class='flex flex-col items-start gap-y-2 mb-12'>
             <motion.div
               ref={refProject1}
               initial="hidden"
@@ -313,9 +360,9 @@ export default function Home() {
 
           <div class='flex flex-col items-start gap-y-2'>
             <motion.div
-              ref={refProject1}
+              ref={refProject2}
               initial="hidden"
-              animate={inViewProject1 ? 'visible' : 'hidden'}
+              animate={inViewProject2 ? 'visible' : 'hidden'}
               variants={animationVariants}
               transition={{ ...animationTransition, delay: 0.2 }}
             >
@@ -336,11 +383,11 @@ export default function Home() {
 
         </div>
         <div class='flex flex-col lg:gap-y-6 md:gap-y-6 sm:gap-y-6 lg:flex-row justify-between w-full my-12'>
-          <div class='flex flex-col items-start gap-y-2'>
+          <div class='flex flex-col items-start gap-y-2 mb-12'>
             <motion.div
-              ref={refProject1}
+              ref={refProject3}
               initial="hidden"
-              animate={inViewProject1 ? 'visible' : 'hidden'}
+              animate={inViewProject3 ? 'visible' : 'hidden'}
               variants={animationVariants}
               transition={{ ...animationTransition, delay: 0.2 }}
             >
@@ -360,9 +407,9 @@ export default function Home() {
 
           <div class='flex flex-col items-start gap-y-2'>
             <motion.div
-              ref={refProject1}
+              ref={refProject4}
               initial="hidden"
-              animate={inViewProject1 ? 'visible' : 'hidden'}
+              animate={inViewProject4 ? 'visible' : 'hidden'}
               variants={animationVariants}
               transition={{ ...animationTransition, delay: 0.2 }}
             >
@@ -383,11 +430,11 @@ export default function Home() {
 
         </div>
         <div class='flex flex-col lg:gap-y-6 md:gap-y-6 sm:gap-y-6 lg:flex-row justify-between w-full my-12'>
-          <div class='flex flex-col items-start gap-y-2'>
+          <div class='flex flex-col items-start gap-y-2 mb-12'>
             <motion.div
-              ref={refProject1}
+              ref={refProject5}
               initial="hidden"
-              animate={inViewProject1 ? 'visible' : 'hidden'}
+              animate={inViewProject5 ? 'visible' : 'hidden'}
               variants={animationVariants}
               transition={{ ...animationTransition, delay: 0.2 }}
             >
@@ -406,9 +453,9 @@ export default function Home() {
 
           <div class='flex flex-col items-start gap-y-2'>
             <motion.div
-              ref={refProject1}
+              ref={refProject6}
               initial="hidden"
-              animate={inViewProject1 ? 'visible' : 'hidden'}
+              animate={inViewProject6 ? 'visible' : 'hidden'}
               variants={animationVariants}
               transition={{ ...animationTransition, delay: 0.2 }}
             >
@@ -441,7 +488,7 @@ export default function Home() {
         <p class='text-[#00ff66] text-center font-bold text-[16px] mt-[40px]'>Join the list.</p>
 
       </div>
-      <div class='w-screen py-24 bg-[#141414]'>
+      <div class='w-screen py-24 bg-[#141414]' id="contact">
         <h6 class='text-white font-bold mb-6 text-[40px] md:text-[60px] text-center mx-auto'>Want to work together?</h6>
         <h6 class='text-white font-bold mb-6 animated-text text-[40px] md:text-[60px] text-center mx-auto'>Lets Talk!</h6>
         <div id='contact' class='flex flex-col lg:gap-0 gap-6 lg:flex-row w-full justify-between max-w-7xl mx-auto px-6 pb-12'>
@@ -460,7 +507,7 @@ export default function Home() {
                   <p class="text-white text-[14px] max-w-[450px] text-left">donks.</p>
             </div>
           </div>
-          <form onSubmit={handleSubmit} ref={formRef} class="bg-[#1a1a1c] p-6 min-w-[450px] rounded-[24px]" action="" method='POST'>
+          <form onSubmit={handleSubmit} ref={formRef} class="bg-[#1a1a1c] p-6 min-w-[350px] sm:min-w-[450px] rounded-[24px]" action="" method='POST'>
             <h6 class="text-white text-[20px] mb-4">Contact Form</h6>
             <div class="flex flex-col items-start mb-6">
             <label class="text-white/60 text-[12px] mb-1" for="Name">Your Name</label>

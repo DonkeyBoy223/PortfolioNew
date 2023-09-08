@@ -14,7 +14,7 @@ export default function Navbar() {
                             <a href='#projects' class='hover:bg-none'>Projects</a>
                         </li>
                         <li class='px-4 text-white cursor-pointer transition-all py-1 text-[16px] font-light hover:bg-white/20 rounded-[5px] border border-white/0 hover:border-white/60'>
-                            <a href='#skills' class='hover:bg-none'>Contact</a>
+                            <a href='#contact' class='hover:bg-none'>Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -31,7 +31,7 @@ export default function Navbar() {
                         <a href='#projects' class='hover:bg-none'>Projects</a>
                     </li>
                     <li class='px-4 text-white cursor-pointer transition-all py-1 text-[16px] font-light hover:bg-white/20 rounded-[5px] border border-white/0 hover:border-white/60'>
-                        <a href='#skills' class='hover:bg-none'>Contact</a>
+                        <a href='#contact' class='hover:bg-none'>Contact</a>
                     </li>
                 </ul>
             </div>
