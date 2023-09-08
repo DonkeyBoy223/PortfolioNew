@@ -203,7 +203,7 @@ export default function Home() {
           </motion.div>
           <div class='flex flex-row items-center xl:ml-[-14px]'>
             <a href='#projects' class='gradient-btn cursor-pointer z-50  transition-all border border-white/0 hover:border-white/50 min-w-[190px] flex text-center flex-row items-center justify-center px-5 py-3 text-white text-[13px] md:text-[16px] font-semibold null'>Portfolio</a>
-            <a href='#contact' class='ml-4 text-[#4E4E50] text=[16px]'>Reach out</a>
+            <a href='#contact' class='ml-4 text-[#FFFFFF] hover:text-[#00ff66] text=[16px]'>Reach out</a>
           </div>
           <div class='flex flex-row items-center gap-x-4'>
             <a href="mailto:sdoncaster5@gmail.com" class="bg-[#4E4E50] w-[40px] flex flex-col items-center justify-center h-[40px] rounded-full">
@@ -347,7 +347,10 @@ export default function Home() {
             >
               <div class="p-0 animated-bg">
                 <a href="https://www.visionbot.cx" target="_blank" rel="noopener noreferrer">
-                  <img src="/assets/vision.png" alt="Project1" />
+                  <picture>
+                    <source srcSet='/assets/vision.webp' type="image/webp"></source>
+                    <img src="/assets/vision.png" alt="Project1 " loading='lazy' />
+                  </picture>
                 </a>
               </div>
               <p class='text-[14px] font-bold text-[#A6ACBB] pt-1'>Vision</p>
@@ -368,7 +371,8 @@ export default function Home() {
             >
               <div class="p-0 animated-bg">
                 <a href="https://github.com/DonkeyBoy223/EcommerceStore/" target="_blank" rel="noopener noreferrer">
-                  <img src="/assets/ecommerce.png" alt="Project2" />
+                  <img src="/assets/ecommerce.png" alt="Project2" loading='lazy' />
+                  <source srcSet='/assets/ecommerce.webp' type="image/webp"></source>
                 </a>
               </div>
               <p class='text-[14px] font-bold text-[#A6ACBB] pt-1'>Ecommerce</p>
@@ -393,7 +397,8 @@ export default function Home() {
             >
               <div class="p-0 animated-bg">
                 <a href="https://reflect.app/" target="_blank" rel="noopener noreferrer">
-                  <img src="/assets/reflect.png" alt="Project1" />
+                  <img src="/assets/reflect.png" alt="Project1" loading='lazy' />
+                  <source srcSet='/assets/reflect.webp' type="image/webp"></source>
                 </a>
               </div>
               <p class='text-[14px] font-bold text-[#A6ACBB] pt-1'>Reflect</p>
@@ -415,7 +420,8 @@ export default function Home() {
             >
               <div class="p-0 animated-bg">
                 <a href="https://www.spearproxies.com/" target="_blank" rel="noopener noreferrer">
-                  <img src="/assets/spear.png" alt="Project2" />
+                  <img src="/assets/spear.png" alt="Project2" loading='lazy' />
+                  <source srcSet='/assets/spear.webp' type="image/webp"></source>
                 </a>
               </div>
               <p class='text-[14px] font-bold text-[#A6ACBB] pt-1'>SpearProxies</p>
@@ -440,7 +446,8 @@ export default function Home() {
             >
               <div class="p-0 animated-bg">
                 <a href="https://dashboard.lemonclub.io/dashboard#static" target="_blank" rel="noopener noreferrer">
-                  <img src="/assets/lemon.png" alt="Project1" />
+                  <img src="/assets/lemon.png" alt="Project1" loading='lazy' />
+                  <source srcSet='/assets/lemon.webp' type="image/webp"></source>
                 </a>
               </div>
               <p class='text-[14px] font-bold text-[#A6ACBB] pt-1'>LemonClub</p>
@@ -461,7 +468,8 @@ export default function Home() {
             >
               <div class="p-0 animated-bg">
                 <a href="https://www.plutoproxies.com" target="_blank" rel="noopener noreferrer">
-                  <img src="/assets/pluto.png" alt="Project2" />
+                  <img src="/assets/pluto.png" alt="Project2" loading='lazy' />
+                  <source srcSet='/assets/pluto.webp' type="image/webp"></source>
                 </a>
               </div>
               <p class='text-[14px] font-bold text-[#A6ACBB] pt-1'>PlutoProxies</p>
