@@ -190,16 +190,16 @@ export default function Home() {
             transition={animationTransitionTextSmall}
           >
           <p class='md:text-[16px] text-[14px] max-w-[480px] xl:text-left text-center font-semibold text-[#8A8A8A]'>
-            With a 
+            Hello, I'm Sam Doncaster. With a 
             <span class='animated-text'> passion </span>
             for creating visually captivating and user-friendly digital
             experiences, I am a front-end developer and upcoming backend developer.
             Armed with 3 years of professional experience, I am dedicated to
             crafting engaging interfaces and seamless interactions that leave 
             a
-            <span class='animated-text'> lasting <br></br> impact </span>
-             on users.
-          </p>
+            <span class='animated-text'> lasting impact </span>
+            on users.
+        </p>
           </motion.div>
           <div class='flex flex-row items-center xl:ml-[-14px]'>
             <a href='#projects' class='gradient-btn cursor-pointer z-50  transition-all border border-white/0 hover:border-white/50 min-w-[190px] flex text-center flex-row items-center justify-center px-5 py-3 text-white text-[13px] md:text-[16px] font-semibold null'>Portfolio</a>
