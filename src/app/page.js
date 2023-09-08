@@ -206,17 +206,16 @@ export default function Home() {
             <a href='#contact' class='ml-4 text-[#FFFFFF] hover:text-[#00ff66] text=[16px]'>Reach out</a>
           </div>
           <div class='flex flex-row items-center gap-x-4'>
-            <a href="mailto:sdoncaster5@gmail.com" class="bg-[#4E4E50] w-[40px] flex flex-col items-center justify-center h-[40px] rounded-full">
-              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="text-white" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path>
-              </svg>
-            </a>
-            <a href="https://github.com/donkeyboy223" class="bg-[#4E4E50] w-[40px] flex flex-col items-center justify-center h-[40px] rounded-full">
-            <svg stroke="currentColor" fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="text-white" viewBox="0 0 24 24">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z">
-              </path>
+          <a href="mailto:sdoncaster5@gmail.com" class="bg-[#4E4E50] w-[40px] flex flex-col items-center justify-center h-[40px] rounded-full" aria-label="Contact via Email">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="text-white" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path>
             </svg>
-            </a>
+          </a>
+          <a href="https://github.com/donkeyboy223" class="bg-[#4E4E50] w-[40px] flex flex-col items-center justify-center h-[40px] rounded-full" aria-label="Visit My GitHub Profile">
+            <svg stroke="currentColor" fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="text-white" viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.840 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.430.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+            </svg>
+          </a>
           </div>
         </div>
       </div>
@@ -526,14 +525,14 @@ export default function Home() {
             <div class="flex flex-col items-start mb-6">
             <label class="text-white/60 text-[12px] mb-1" for="Message">Message</label>
             <textarea class="bg-transparent border text-white/60 border-white/10 rounded-lg p-3 px-4 w-full" placeholder="How can I help you?" value={formData.message} onChange={handleChange} required id="message" name="message"></textarea></div>
-            <a class="gradient-btn cursor-pointer z-50  transition-all border border-white/0 hover:border-white/50 min-w-[190px] flex text-center flex-row items-center justify-center px-5 py-3 text-white text-[13px] md:text-[16px] font-semibold null"><button type='submit'>Send Message</button></a>
+            <a rel="nofollow" class="gradient-btn cursor-pointer z-50  transition-all border border-white/0 hover:border-white/50 min-w-[190px] flex text-center flex-row items-center justify-center px-5 py-3 text-white text-[13px] md:text-[16px] font-semibold null"><button type='submit'>Send Message</button></a>
           </form>
         </div>
         <div class='w-full h-1 bg-[#4E4E50] my-[40px]'></div>
         <footer class='footer p-10 px-6 max-w-[1560px] mx-auto  text-base-content'>
           <div>
             <div class='flex flex-row items-center gap-x-1 md:gap-x-2'>
-              <a class='font-bold md:block hidden brand-text  text-[16px] md:text-[20px] text-[#4E4E50]'>Sam Doncaster</a>
+              <a rel="nofollow" class='font-bold md:block hidden brand-text  text-[16px] md:text-[20px] text-[#4E4E50]'>Sam Doncaster</a>
             </div>
           </div>
           <div>
@@ -544,11 +543,11 @@ export default function Home() {
           <div>
             <span class="footer-title text-[16px] font-bold text-[#8A8A8A] uppercase">Contact Links</span>
             <a href="#contact" class="hover:text-[#00ff66] text-white text-[16px] font-semibold">Contact</a>
-            <a class="hover:text-[#00ff66] text-white text-[16px] font-semibold">Twitter</a>
+            <a rel="nofollow" class="hover:text-[#00ff66] text-white text-[16px] font-semibold">Twitter</a>
           </div>
           <div>
             <span class="footer-title text-[16px] font-bold text-[#8A8A8A] uppercase">Support</span>
-            <a class="hover:text-[#00ff66] text-white text-[16px] font-semibold">Contact</a>
+            <a rel="nofollow" class="hover:text-[#00ff66] text-white text-[16px] font-semibold">Contact</a>
             <a href='mailto:sdoncaster5@gmail.com' class="hover:text-[#00ff66] text-[#00ff66] text-[16px] font-semibold hover:cursor-pointer">Email<span>
               <svg class="inline-block ml-2" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M2.47144 7.45143C2.2052 7.48809 2 7.71969 2 7.99993C2 8.30564 2.24421 8.55347 2.54545 8.55347H12.1333L8.6698 12.0542L8.61686 12.1162C8.45797 12.3326 8.47495 12.6401 8.6682 12.8371C8.88077 13.0537 9.22613 13.0544 9.43959 12.8387L13.8318 8.3997C13.858 8.37427 13.8816 8.34622 13.9024 8.31597C14.0511 8.0998 14.0301 7.79995 13.8396 7.60737L9.43955 3.16129L9.37826 3.10782C9.16439 2.9475 8.8614 2.96603 8.66817 3.16297C8.45561 3.37961 8.45636 3.7301 8.66983 3.9458L12.1342 7.44638L2.54545 7.44638L2.47144 7.45143Z" fill="#ff83be"></path>
