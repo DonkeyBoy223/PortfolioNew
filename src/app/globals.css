@@ -118,8 +118,8 @@ body, html {
   align-items: center;
 }
 .btn-ghost {
-  border-width: 1px;
-  border-color: transparent;
+  border-width: 1px!important;
+  border-color: transparent!important;
   background-color: transparent;
   color: currentColor;
   --tw-shadow: 0 0 #0000;
@@ -166,12 +166,14 @@ body, html {
   color: hsl(var(--bc)/var(--tw-text-opacity));
   outline-color: hsl(var(--bc)/1);
 }
-.dropdown:is(:not(details)) .dropdown-content {
-  visibility: hidden;
-  opacity: 0;
+/* Initial styling for the visible dropdown content */
+.dropdown .dropdown-content {
+  position: absolute;
+  visibility: visible; /* Change this to "visible" */
+  opacity: 1; /* Change this to "1" */
   transform-origin: top;
-  --tw-scale-x: .95;
-  --tw-scale-y: .95;
+  --tw-scale-x: 1; /* Change this to "1" */
+  --tw-scale-y: 1; /* Change this to "1" */
   transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -179,8 +181,19 @@ body, html {
   transition-duration: .2s;
   transition-timing-function: cubic-bezier(.4,0,.2,1);
 }
-.dropdown .dropdown-content {
-  position: absolute;
+.menu {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  padding: 0.5rem;
+}
+
+/* Styles for hiding the dropdown content */
+.dropdown.closed .dropdown-content {
+  visibility: hidden;
+  opacity: 0;
 }
 .animated-text {
   --bg-size: 400%;

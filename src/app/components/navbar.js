@@ -1,12 +1,21 @@
+import { useState } from 'react';
+
+
 export default function Navbar() {
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen);
+    };
     return (
         <div class="navbar sticky max-w-[1650px] z-50 px-4 mx-auto bg-opacity-80 backdrop-blur-md bg-opacity-40 p-4 rounded-lg">
             <div class='navbar-start'>
-                <div class='dropdown'>
-                    <label tabIndex="0" class='btn btn-ghost lg:hidden'>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path></svg>
+                <div className={`dropdown ${isOpen ? 'open' : 'closed'}`}>
+                    <label tabIndex="0" class='btn btn-ghost lg:hidden' onClick={toggleDropdown}>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="#8A8A8A"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path></svg>
                     </label>
-                    <ul class='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#1a1a1c] rounded-box w-52'>
+                    <ul className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#1a1a1c] rounded-box w-52'>
                         <li class='px-4 text-white cursor-pointer transition-all py-1 text-[16px] font-light hover:bg-white/20 rounded-[5px] border border-white/0 hover:border-white/60'>
                             <a href='#skills' class='hover:bg-none'>Skills</a>
                         </li>
