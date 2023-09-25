@@ -369,17 +369,17 @@ export default function Home() {
               transition={{ ...animationTransition, delay: 0.2 }}
             >
               <div class="p-0 animated-bg">
-                <a href="https://github.com/DonkeyBoy223/EcommerceStore/" target="_blank" rel="noopener noreferrer">
-                  <img src="/assets/ecommerce.png" alt="Project2" loading='lazy' />
-                  <source srcSet='/assets/ecommerce.webp' type="image/webp"></source>
+                <a href="https://reflect.app" target="_blank" rel="noopener noreferrer">
+                  <img src="/assets/reflect.png" alt="Project2" loading='lazy' />
+                  <source srcSet='/assets/reflect.webp' type="image/webp"></source>
                 </a>
               </div>
-              <p class='text-[14px] font-bold text-[#A6ACBB] pt-1'>Ecommerce</p>
+              <p class='text-[14px] font-bold text-[#A6ACBB] pt-1'>ReflectApp</p>
               <div class="flex flex-row gap-x-4 pt-1">
                 <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">React</div>
-                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">NodeJS</div>
-                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">MySQL</div>
-                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">SimpleUI</div>
+                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">UI/UX</div>
+                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">Figma</div>
+                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">Web Animations</div>
               </div>
             </motion.div>
           </div>
@@ -395,16 +395,17 @@ export default function Home() {
               transition={{ ...animationTransition, delay: 0.2 }}
             >
               <div class="p-0 animated-bg">
-                <a href="https://reflect.app/" target="_blank" rel="noopener noreferrer">
-                  <img src="/assets/reflect.png" alt="Project1" loading='lazy' />
-                  <source srcSet='/assets/reflect.webp' type="image/webp"></source>
+                <a href="https://github.com/DonkeyBoy223/EcommerceStore/" target="_blank" rel="noopener noreferrer">
+                  <img src="/assets/ecommerce.png" alt="Project1" loading='lazy' />
+                  <source srcSet='/assets/ecommerce.webp' type="image/webp"></source>
                 </a>
               </div>
-              <p class='text-[14px] font-bold text-[#A6ACBB] pt-1'>Reflect</p>
+              <p class='text-[14px] font-bold text-[#A6ACBB] pt-1'>Ecommerce</p>
               <div class="flex flex-row gap-x-4 pt-1 pb-2">
-                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">UI/UX</div>
-                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66] ">Web Animations</div>
-                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66] ">Figma</div>
+              <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">React</div>
+                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">NodeJS</div>
+                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">MySQL</div>
+                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">SimpleUI</div>
               </div>
             </motion.div>
           </div>
