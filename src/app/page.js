@@ -242,7 +242,7 @@ export default function Home() {
               transition={{ ...animationTransition, delay: 0.75 }}
             >
               <h2 class="text-white animated-text font-bold text-[40px] md:text-[60px] text-center">HTML</h2>
-              <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">4 Years Experience</p>
+              <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">5 Years Experience</p>
             </motion.div>
           </div>
           <div class="flex flex-col items-center lg:items-start gap-y-4">
@@ -254,7 +254,7 @@ export default function Home() {
               transition={{ ...animationTransition, delay: 0.75 }}
             >
               <h3 class="text-white animated-text font-bold text-[40px] md:text-[60px] text-center">NodeJS</h3>
-              <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">3 Years Experience</p>
+              <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">3.5 Years Experience</p>
             </motion.div>
           </div>
           <div class="flex flex-col items-center lg:items-start gap-y-4">
@@ -266,7 +266,7 @@ export default function Home() {
               transition={{ ...animationTransition, delay: 0.75 }}
             >
               <h4 class="text-white animated-text font-bold text-[40px] md:text-[60px] text-center">Javascript</h4>
-              <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">3 Years Experience</p>
+              <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">3.5 Years Experience</p>
             </motion.div>
           </div>
 
@@ -282,7 +282,7 @@ export default function Home() {
               transition={{ ...animationTransition, delay: 0.75}}
             >
               <h5 class="text-white animated-text font-bold text-[40px] md:text-[60px] text-center">React</h5>
-              <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">2.5 Years Experience</p>
+              <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">3 Years Experience</p>
             </motion.div>
           </div>
           <div class="flex flex-col items-center lg:items-start gap-y-4">
@@ -294,7 +294,7 @@ export default function Home() {
               transition={{ ...animationTransition, delay: 0.75}}
             >
               <h6 class="text-white animated-text font-bold text-[40px] md:text-[60px] text-center">NextJS</h6>
-              <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">9 Months Experience</p>
+              <p class="text-[#4E4E50] text-center lg:text-left text-[20px]">1 Year Experience</p>
             </motion.div>
           </div>
           <div class="flex flex-col items-center lg:items-start gap-y-4">
