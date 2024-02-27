@@ -9,6 +9,10 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer'
 import { useRef, useState } from 'react';
 import Alert from './components/alert';
+import { LampContainer } from './components/lamp';
+import { CardBody, CardContainer, CardItem } from './components/3dcard';
+import { Button } from './components/moving-border';
+import { PinContainer } from './components/3dpin';
 
 export default function Home() {
 
@@ -202,7 +206,11 @@ export default function Home() {
         </p>
           </motion.div>
           <div class='flex flex-row items-center xl:ml-[-14px]'>
-            <a href='#projects' class='gradient-btn cursor-pointer z-50  transition-all border border-white/0 hover:border-white/50 min-w-[190px] flex text-center flex-row items-center justify-center px-5 py-3 text-white text-[13px] md:text-[16px] font-semibold null'>Portfolio</a>
+            <a href='#projects'>
+              <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border  min-w-[190px] border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-5 py-3 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+              Portfolio
+              </button>
+            </a>
             <a href='#contact' class='ml-4 text-[#FFFFFF] hover:text-[#00ff66] text=[16px]'>Reach out</a>
           </div>
           <div class='flex flex-row items-center gap-x-4'>
@@ -222,6 +230,8 @@ export default function Home() {
       <div id='skills' class='py-[120px] max-w-7xl mx-auto px-6 z-30 relative'>
         <div class='flex flex-row justify-between w-full my-6'>
           <h1 class='text-white text-[40px] md:text-[60px] font-bold'>Skills</h1>
+        </div>
+        <div>
         </div>
         <motion.div
           ref={refMain}
@@ -336,29 +346,33 @@ export default function Home() {
         <div class='w-full h-1 bg-[#4E4E50] '></div>
         </motion.div>
         <div class='flex flex-col lg:gap-y-6 md:gap-y-6 sm:gap-y-6 lg:flex-row justify-between w-full my-12'>
-          <div class='flex flex-col items-start gap-y-2 mb-12'>
-            <motion.div
-              ref={refProject1}
-              initial="hidden"
-              animate={inViewProject1 ? 'visible' : 'hidden'}
-              variants={animationVariants}
-              transition={{ ...animationTransition, delay: 0.2 }}
-            >
-              <div class="p-0 animated-bg">
-                <a href="https://www.visionbot.cx" target="_blank" rel="noopener noreferrer">
-                  <picture>
-                    <source srcSet='/assets/vision.webp' type="image/webp"></source>
-                    <img src="/assets/vision.png" alt="Project1 " loading='lazy' />
-                  </picture>
-                </a>
-              </div>
-              <p class='text-[14px] font-bold text-[#A6ACBB] pt-1'>Vision</p>
-              <div class="flex flex-row gap-x-4 pt-1 pb-2">
-                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">React</div>
-                <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66] ">Web Animations</div>
-              </div>
-            </motion.div>
+        <div class='flex flex-col items-start gap-y-2'>
+        <motion.div
+            ref={refProject1}
+            initial="hidden"
+            animate={inViewProject1 ? 'visible' : 'hidden'}
+            variants={animationVariantsLine}
+            transition={{ ...animationTransition, delay: 0.2 }}
+          >
+        <PinContainer
+        title="VisionBot Landing Page"
+        href="https://wwww.visionbot.cx"
+      >
+        <div className="flex basis-full flex-col tracking-tight text-slate-100/50 sm:basis-1/2 w-[554px] h-[334px] ">
+          <div className="flex flex-1 w-full rounded-lg ">
+            <img src="/assets/vision.png" alt="Project1" loading='lazy' />
+            <source srcSet='/assets/vision.webp' type="image/webp"></source>
           </div>
+        </div>
+      </PinContainer>
+      <p class='text-[14px] font-bold text-[#A6ACBB] pt-10'>Vision</p>
+      <div class="flex flex-row gap-x-4 pt-1">
+        <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">React</div>
+        <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">UI/UX</div>
+        <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">Web Animations</div>
+      </div>
+      </motion.div>
+      </div>
 
           <div class='flex flex-col items-start gap-y-2'>
             <motion.div
@@ -368,13 +382,18 @@ export default function Home() {
               variants={animationVariants}
               transition={{ ...animationTransition, delay: 0.2 }}
             >
-              <div class="p-0 animated-bg">
-                <a href="https://reflect.app" target="_blank" rel="noopener noreferrer">
-                  <img src="/assets/reflect.png" alt="Project2" loading='lazy' />
-                  <source srcSet='/assets/reflect.webp' type="image/webp"></source>
-                </a>
-              </div>
-              <p class='text-[14px] font-bold text-[#A6ACBB] pt-1'>ReflectApp</p>
+              <PinContainer
+                title="ReflectApp"
+                href="https://www.reflect.app"
+              >
+                <div className="flex basis-full flex-col tracking-tight text-slate-100/50 sm:basis-1/2 w-[554px] h-[334px] ">
+                  <div className="flex flex-1 w-full rounded-lg ">
+                    <img src="/assets/reflect.png" alt="Project2" loading='lazy' />
+                    <source srcSet='/assets/reflect.webp' type="image/webp"></source>
+                  </div>
+                </div>
+              </PinContainer>
+              <p class='text-[14px] font-bold text-[#A6ACBB] pt-10'>ReflectApp</p>
               <div class="flex flex-row gap-x-4 pt-1">
                 <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">React</div>
                 <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">UI/UX</div>
@@ -394,13 +413,18 @@ export default function Home() {
               variants={animationVariants}
               transition={{ ...animationTransition, delay: 0.2 }}
             >
-              <div class="p-0 animated-bg">
-                <a href="https://github.com/DonkeyBoy223/EcommerceStore/" target="_blank" rel="noopener noreferrer">
-                  <img src="/assets/ecommerce.png" alt="Project1" loading='lazy' />
-                  <source srcSet='/assets/ecommerce.webp' type="image/webp"></source>
-                </a>
-              </div>
-              <p class='text-[14px] font-bold text-[#A6ACBB] pt-1'>Ecommerce</p>
+              <PinContainer
+                title="Eccomerce Store"
+                href="https://www.github.com/samdonks/EccomerceStore"
+              >
+                <div className="flex basis-full flex-col tracking-tight text-slate-100/50 sm:basis-1/2 w-[554px] h-[334px] ">
+                  <div className="flex flex-1 w-full rounded-lg ">
+                    <img src="/assets/ecommerce.png" alt="Project2" loading='lazy' />
+                    <source srcSet='/assets/ecommerce.webp' type="image/webp"></source>
+                  </div>
+                </div>
+              </PinContainer>
+              <p class='text-[14px] font-bold text-[#A6ACBB] pt-10'>Ecommerce</p>
               <div class="flex flex-row gap-x-4 pt-1 pb-2">
               <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">React</div>
                 <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">NodeJS</div>
@@ -418,13 +442,18 @@ export default function Home() {
               variants={animationVariants}
               transition={{ ...animationTransition, delay: 0.2 }}
             >
-              <div class="p-0 animated-bg">
-                <a href="https://www.spearproxies.com/" target="_blank" rel="noopener noreferrer">
-                  <img src="/assets/spear.png" alt="Project2" loading='lazy' />
-                  <source srcSet='/assets/spear.webp' type="image/webp"></source>
-                </a>
-              </div>
-              <p class='text-[14px] font-bold text-[#A6ACBB] pt-1'>SpearProxies</p>
+              <PinContainer
+                title="SpearProxies"
+                href="https://www.spearproxies.com"
+              >
+                <div className="flex basis-full flex-col tracking-tight text-slate-100/50 sm:basis-1/2 w-[554px] h-[334px] ">
+                  <div className="flex flex-1 w-full rounded-lg ">
+                    <img src="/assets/spear.png" alt="Project2" loading='lazy' />
+                    <source srcSet='/assets/spear.webp' type="image/webp"></source>
+                  </div>
+                </div>
+              </PinContainer>
+              <p class='text-[14px] font-bold text-[#A6ACBB] pt-10'>SpearProxies</p>
               <div class="flex flex-row gap-x-4 pt-1">
                 <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">React</div>
                 <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">Web Animations</div>
@@ -444,13 +473,18 @@ export default function Home() {
               variants={animationVariants}
               transition={{ ...animationTransition, delay: 0.2 }}
             >
-              <div class="p-0 animated-bg">
-                <a href="https://dashboard.lemonclub.io/dashboard#static" target="_blank" rel="noopener noreferrer">
-                  <img src="/assets/lemon.png" alt="Project1" loading='lazy' />
-                  <source srcSet='/assets/lemon.webp' type="image/webp"></source>
-                </a>
-              </div>
-              <p class='text-[14px] font-bold text-[#A6ACBB] pt-1'>LemonClub</p>
+              <PinContainer
+                title="LemonProxies"
+                href="https://dashboard.lemonclub.io/dashboard#static"
+              >
+                <div className="flex basis-full flex-col tracking-tight text-slate-100/50 sm:basis-1/2 w-[554px] h-[334px] ">
+                  <div className="flex flex-1 w-full rounded-lg ">
+                    <img src="/assets/lemon.png" alt="Project2" loading='lazy' />
+                    <source srcSet='/assets/lemon.webp' type="image/webp"></source>
+                  </div>
+                </div>
+              </PinContainer>
+              <p class='text-[14px] font-bold text-[#A6ACBB] pt-10'>LemonClub</p>
               <div class="flex flex-row gap-x-4 pt-1 pb-2">
                 <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">React</div>
                 <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66] ">Figma</div>
@@ -466,13 +500,18 @@ export default function Home() {
               variants={animationVariants}
               transition={{ ...animationTransition, delay: 0.2 }}
             >
-              <div class="p-0 animated-bg">
-                <a href="https://www.plutoproxies.com" target="_blank" rel="noopener noreferrer">
-                  <img src="/assets/pluto.png" alt="Project2" loading='lazy' />
-                  <source srcSet='/assets/pluto.webp' type="image/webp"></source>
-                </a>
-              </div>
-              <p class='text-[14px] font-bold text-[#A6ACBB] pt-1'>PlutoProxies</p>
+              <PinContainer
+                title="Pluto Proxies"
+                href=""
+              >
+                <div className="flex basis-full flex-col tracking-tight text-slate-100/50 sm:basis-1/2 w-[554px] h-[334px] ">
+                  <div className="flex flex-1 w-full rounded-lg ">
+                    <img src="/assets/pluto.png" alt="Project2" loading='lazy' />
+                    <source srcSet='/assets/pluto.webp' type="image/webp"></source>
+                  </div>
+                </div>
+              </PinContainer>
+              <p class='text-[14px] font-bold text-[#A6ACBB] pt-10'>PlutoProxies</p>
               <div class="flex flex-row gap-x-4 pt-1">
                 <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">React</div>
                 <div class="bg-[#4E4E50]/20 text-[#4E4E50] text-[14px] px-2 py-1 rounded-md flex flex-col items-center hover:text-[#00ff66]">UI/UX</div>
@@ -515,6 +554,10 @@ export default function Home() {
                   <p class="text-white text-[14px] max-w-[450px] text-left">donks.</p>
             </div>
           </div>
+          <Button
+        borderRadius="1.75rem"
+        className="bg-bg-[#1a1a1c] dark:bg-[#1a1a1c] text-black dark:text-white border-neutral-200 dark:border-slate-800"
+          >
           <form onSubmit={handleSubmit} ref={formRef} class="bg-[#1a1a1c] p-6 min-w-[350px] sm:min-w-[450px] rounded-[24px]" action="" method='POST'>
             <h6 class="text-white text-[20px] mb-4">Contact Form</h6>
             <div class="flex flex-col items-start mb-6">
@@ -528,6 +571,7 @@ export default function Home() {
             <textarea class="bg-transparent border text-white/60 border-white/10 rounded-lg p-3 px-4 w-full" placeholder="How can I help you?" value={formData.message} onChange={handleChange} required id="message" name="message"></textarea></div>
             <p class="gradient-btn cursor-pointer z-50  transition-all border border-white/0 hover:border-white/50 min-w-[190px] flex text-center flex-row items-center justify-center px-5 py-3 text-white text-[13px] md:text-[16px] font-semibold null"><button type='submit'>Send Message</button></p>
           </form>
+          </Button>
         </div>
         <div class='w-full h-1 bg-[#4E4E50] my-[40px]'></div>
         <footer class='footer p-10 px-6 max-w-[1560px] mx-auto  text-base-content'>
